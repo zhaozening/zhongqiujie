@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>中秋节</title>
+    <script src="js/fontsize.js"></script>
+    <link rel="stylesheet" href="js/swiper-3.4.2.min.css">
+    <script src="js/swiper-3.4.2.min.js"></script>
+
+    <script src="js/zepto.min.js"></script>
+    <link rel="stylesheet" href="js/animate.css">
+    <style>
+        *{margin: 0;padding: 0;list-style: none;text-decoration: none;}
+        html,body{width: 100%;height: 100%;overflow: hidden;}
+        .page{width: 100%;height: 100%;position: absolute;text-align: center;transition: transform 1s linear;}
+        .page-1{
+            background: url("images/index_bg.png");
+            background-size: 100% 100%;
+        }
+        .page-1 img:nth-of-type(1){
+            width: 2.7rem;
+            height: 4.6rem;
+            margin-top: 1.69rem;
+
+        }
+        .page-1 img:nth-of-type(2),.page-3 img:nth-of-type(1){
+            width: 2.15rem;
+            height: 0.72rem;
+            position: absolute;
+            left: -2.15rem;
+            bottom: 2.37rem;
+
+        }
+        .page-1 img:nth-of-type(3),.page-3 img:nth-of-type(2){
+            width: 1.78rem;
+            height: 0.61rem;
+            position: absolute;
+            left: -1.78rem;
+            bottom: 3.96rem;
+
+        }
+        .page-2{
+            background: url("images/page2_bg.png");
+            background-size: 100% 100%;
+        }
+        .page-2 span{
+            display: inline-block;
+            position: absolute;
+        }
+        .page-2 span:nth-of-type(1){
+            width: 0.58rem;
+            height: 0.58rem;
+            top:0.66rem;
+            left: 1.69rem;
+            animation: opacity 3s ease 1;
+            animation-fill-mode: forwards;
+        }
+        .page-2 span:nth-of-type(2n-1) img{
+            width: 0.58rem;
+            height: 0.58rem;
+
+        }
+        .page-2 span:nth-of-type(2){
+            width: 0.04rem;
+            height: 0rem;
+            top:1.45rem;
+            left: 2rem;
+            transform-origin:top ;
+            transform: rotate(25deg);
+            background: url("images/icon3.png") repeat;
+            animation: page-2 2s linear 1 2s;
+            animation-fill-mode: forwards;
+        }
+        .page-2 span:nth-of-type(3){
+            width: 0.58rem;
+            height: 0.58rem;
+            top:2.15rem;
+            left: 1rem;
+            animation: opacity 3s ease 1 4s;
+            animation-fill-mode: forwards;
+        }
+        .page-2 span:nth-of-type(4){
+            width: 0.04rem;
+            height: 1.59rem;
+            top:3rem;
+            left: 1.3rem;
+            transform-origin:top ;
+            transform: rotate(-25deg);
+            background: url("images/icon3.png") repeat;
+            animation: page-2 2s linear 1 6s;
+            animation-fill-mode: forwards;
+        }
+        .page-2 span:nth-of-type(5){
+            width: 0.58rem;
+            height: 0.58rem;
+            top:3.7rem;
+            left: 1.7rem;
+            animation: opacity 3s ease 1 8s;
+            animation-fill-mode: forwards;
+        }
+        .page-2 span:nth-of-type(6){
+            width: 0.04rem;
+            height: 1.59rem;
+            top:4.5rem;
+            left: 2rem;
+            transform-origin:top ;
+            transform: rotate(25deg);
+            background: url("images/icon3.png") repeat;
+            animation: page-2 2s linear 1 9s;
+            animation-fill-mode: forwards;
+        }
+        .page-2 span:nth-of-type(7){
+            width: 0.58rem;
+            height: 0.58rem;
+            top:5.1rem;
+            left: 1.1rem;
+            animation: opacity 3s ease 1 11s;
+            animation-fill-mode: forwards;
+        }
+        .page-2 p{
+            position: absolute;
+            top:0.75rem;
+            left: 2rem;
+            font-size:0.4rem;
+            color: white;
+            line-height: 1.45rem;
+            font-weight: bold;
+            text-align: left;
+            height: 6rem;
+            overflow: hidden;
+            animation: page-2-p 15s linear 1;
+            animation-fill-mode: forwards;
+
+        }
+        .page-2 span,.page-2 p{
+            opacity: 0;
+        }
+        .page-3{
+            background: url("images/3_bg.png");
+            background-size: 100% 100%;
+        }
+        .page-3 p:nth-of-type(1){
+            width: 0;
+            height: 2.8rem;
+            overflow: hidden;
+            float: right;
+            writing-mode:tb-rl;
+            line-height: 0.38rem;
+            letter-spacing:0.05rem;
+            text-align: center;
+            font-size: 0.48rem;
+            color: white;
+            margin: 0.28rem 0.5rem 0 0 !important;
+            padding: 0 0.15rem;
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0;
+            animation: t1 2s linear 1 ;
+            animation-fill-mode: forwards;
+
+        }
+        .page-3 p:nth-of-type(2){
+            font-size: 0.24rem;
+            color: white;
+            width:0;
+            overflow: hidden;
+            height: 3.6rem;
+            float: right;
+            writing-mode:tb-rl;
+            line-height: 0.38rem;
+            letter-spacing:0.05rem;
+            margin-right: 0.1rem;
+            text-align: left;
+            margin-top: 1.3rem;
+            padding-right: 0.2rem;
+            animation: t2 3s linear 1 2s;
+            animation-fill-mode: forwards;
+
+        }
+        .page-4{
+            background: url("images/4_bg.png");
+            background-size: 100% 100%;
+        }
+        .page-4 img{
+            opacity: 0;
+            animation: opacity 3s linear 1 2s;
+            animation-fill-mode: forwards;
+        }
+        .page-4 img:nth-of-type(1){
+            width: 3.3rem;
+            height: 3.7rem;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+        .page-4 p:nth-of-type(1){
+            font-size: 0.48rem;
+            color: white;
+            width: 0;
+            overflow: hidden;
+            height: 0;
+            float: right;
+            margin-right: 0.45rem;
+            margin-top: 0.26rem;
+            animation: p1 3s linear 1;
+            animation-fill-mode: forwards;
+
+        }
+        .page-4 p:nth-of-type(2){
+            font-size: 0.24rem;
+            color: white;
+            width:0;
+            overflow: hidden;
+            height:3.8rem;
+            float: right;
+            writing-mode:tb-rl;
+            line-height: 0.38rem;
+            letter-spacing:0.03rem;
+            margin-right: 0.25rem;
+            text-align: left;
+            margin-top: 0.3rem;
+            animation: p2 3s linear 1 3s;
+            animation-fill-mode: forwards;
+        }
+        .page-4 img:nth-of-type(2){
+            width: 2.94rem;
+            height: 2.48rem;
+            position: absolute;
+            top:4.1rem;
+            left: 0.18rem;
+        }
+        .page-4 img:nth-of-type(3){
+            width: 2.99rem;
+            height:2.48rem;
+            position: absolute;
+            top:4.1rem;
+            right:0.16rem;
+        }
+        .page-4 img:nth-of-type(4){
+            width: 2.93rem;
+            height: 1.94rem;
+            position: absolute;
+            bottom:2.6rem;
+            left: 0.18rem;
+        }
+        .page-4 img:nth-of-type(5){
+            width: 2.98rem;
+            height:1.94rem;
+            position: absolute;
+            right:0.16rem;
+            bottom:2.6rem;
+
+        }
+        .page-4 img:nth-of-type(6){
+            width: 2.92rem;
+            height:2.09rem;
+            position: absolute;
+            left:0.18rem;
+            bottom:0.3rem;
+
+        }
+        .page-4 img:nth-of-type(7){
+            width: 3rem;
+            height:2.10rem;
+            position: absolute;
+            right:0.15rem;
+            bottom:0.3rem;
+
+        }
+
+
+
+        .page-5{
+            background: url("images/5_bg.png");
+            background-size: 100% 100%;
+        }
+        .page-5 img{
+            position: absolute;
+            border: 0.05rem solid #1e3254;
+            border-radius: 0.05rem;
+            opacity: 0;
+            animation: opacity 3s linear 1 2s;
+            animation-fill-mode: forwards;
+        }
+        .page-5 p:nth-of-type(1){
+            font-size: 0.48rem;
+            color: white;
+            width: 0;
+            overflow: hidden;
+            height: 0;
+            float: right;
+            margin-right: 0.45rem;
+            margin-top: 0.26rem;
+            animation: p1 3s linear 1;
+            animation-fill-mode: forwards;
+
+        }
+        .page-5 p:nth-of-type(2){
+            font-size: 0.24rem;
+            color: white;
+            width:0;
+            overflow: hidden;
+            height:3.8rem;
+            float: right;
+            writing-mode:tb-rl;
+            line-height: 0.38rem;
+            letter-spacing:0.03rem;
+            margin-right: 0.25rem;
+            text-align: left;
+            margin-top: 0.3rem;
+            animation: p2 3s linear 1 3s;
+            animation-fill-mode: forwards;
+        }
+        .page-5 img:nth-of-type(1){
+            width: 4.06rem;
+            height: 2.72rem;
+            position: absolute;
+            top:0.63rem;
+            left:0.15rem;
+        }
+        .page-5 img:nth-of-type(2){
+            width: 3.08rem;
+            height: 2.07rem;
+            position: absolute;
+            top:4rem;
+            left:0.15rem;
+        }
+        .page-5 img:nth-of-type(3){
+            width: 2.82rem;
+            height: 2.07rem;
+            position: absolute;
+            top:4rem;
+            right:0.09rem;
+        }
+        .page-5 img:nth-of-type(4){
+            width:3.09rem;
+            height: 2.04rem;
+            position: absolute;
+            top:6.3rem;
+            left:0.15rem;
+        }
+        .page-5 img:nth-of-type(5){
+            width: 2.8rem;
+            height: 2.06rem;
+            position: absolute;
+            top:6.3rem;
+            right: 0.09rem;
+        }
+        .page-5 img:nth-of-type(6){
+            width: 3.06rem;
+            height: 2.29rem;
+            position: absolute;
+            bottom:0.36rem;
+            left:0.15rem;
+        }
+        .page-5 img:nth-of-type(7){
+            width: 2.79rem;
+            height: 2.29rem;
+            position: absolute;
+            bottom: 0.36rem;
+            right: 0.09rem;
+        }
+
+
+
+
+
+
+
+
+
+        .page-6{
+            background: url("images/page-3_bg.png");
+            background-size:100% 100%;
+            text-align: right;
+
+        }
+        .page-6 p:nth-of-type(1){
+            font-size: 0.48rem;
+            color: white;
+            width: 0;
+            overflow: hidden;
+            height: 0;
+            float: right;
+            margin-right: 0.45rem;
+            margin-top: 0.26rem;
+            animation: p1 3s linear 1;
+            animation-fill-mode: forwards;
+
+        }
+        .page-6 p:nth-of-type(2){
+            font-size: 0.24rem;
+            color: white;
+            width:0;
+            overflow: hidden;
+            height:3.2rem;
+            float: right;
+            writing-mode:tb-rl;
+            line-height: 0.38rem;
+            letter-spacing:0.05rem;
+            margin-right: 0.25rem;
+            text-align: left;
+            margin-top: 0.6rem;
+            animation: p2 3s linear 1 3s;
+            animation-fill-mode: forwards;
+        }
+        .page-6 p:nth-of-type(3){
+            font-size: 0.24rem;
+            color: white;
+            width: 0;
+            overflow: hidden;
+            height: 3.2rem;
+            float: right;
+            writing-mode:tb-rl;
+            line-height: 0.38rem;
+            letter-spacing:0.05rem;
+            margin-right: 0.05rem;
+            text-align: left;
+            margin-top: 0.6rem;
+            animation: p2 3s linear 1 6s;
+            animation-fill-mode: forwards;
+        }
+        .page-6 p:nth-of-type(4){
+            font-size: 0.24rem;
+            color: white;
+            width:0;
+            overflow: hidden;
+            height: 2.4rem;
+            float: right;
+            writing-mode:tb-rl;
+            line-height: 0.32rem;
+            letter-spacing:0.05rem;
+            margin-right: 0.05rem;
+            text-align: left;
+            margin-top: 0.45rem;
+            padding-right: 0.2rem;
+            animation: p3 30s linear 1 9s;
+            animation-fill-mode: forwards;
+        }
+
+
+
+
+
+
+
+    </style>
+
+
+</head>
+<body>
+<!--第一页-->
+<div class="page page-1">
+    <img src="images/index_pic.png" alt="" class="opacity">
+    <img src="images/icon1.png" alt="" class="moveRight">
+    <img src="images/icon1.png" alt="" class="moveRight_2">
+</div>
+<!--第二页-->
+<div class="page page-2 pageDown">
+    <!--159-->
+    <span><img src="images/icon2.png" alt=""></span>
+    <span></span>
+    <span><img src="images/icon2.png" alt=""></span>
+    <span></span>
+    <span><img src="images/icon2.png" alt=""></span>
+    <span></span>
+    <span><img src="images/icon2.png" alt=""></span>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中秋起源<br>中秋习俗<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中秋美食<br>中秋诗歌</p>
+</div>
+<!--第三页-->
+<div class="page page-3 pageDown">
+    <p style="FILTER: shadow(color=#ffffff, strength=100);">
+        <font face=华文彩云 color=#ffffff>中秋 起源</font>
+
+    </p>
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中秋节，又称月夕、秋
+        <br>节、仲秋节、八月节。追月
+        <br>节、玩月节、拜月节、女儿
+        <br>节或者团圆节。仲秋节始于
+        <br>唐朝初期，盛行于宋朝、明
+        <br>清时期已成为与春节齐名的
+        <br>中国主要节日之一。中秋节
+        <br>月圆兆人之团圆，为寄托思
+        <br>念故乡，思念亲人之情期
+        <br>盼丰收、幸福成为丰富多彩
+        <br>弥足珍贵的文化遗产
+    </p>
+    <img src="images/icon1.png" alt="" class="moveRight">
+    <img src="images/icon1.png" alt="" class="moveRight_2">
+</div>
+<!--第四页-->
+<div class="page page-4 pageDown">
+    <img src="images/left.png" alt="">
+    <p style="FILTER: shadow(color=#ffffff, strength=100);">
+        <font face=华文彩云 color=#ffffff>中秋习俗</font>
+
+    </p>
+    <p>
+        祭月、赏月、拜月、观潮
+        <br>燃灯、猜谜、吃月饼、赏桂花
+        <br>饮桂花酒、玩花灯、烧塔等。
+    </p>
+    <img src="images/4_pic1.png" alt="">
+    <img src="images/4_pic2.png" alt="">
+    <img src="images/4_pic3.png" alt="">
+    <img src="images/4_pic4.png" alt="">
+    <img src="images/4_pic5.png" alt="">
+    <img src="images/4_pic6.png" alt="">
+</div>
+<!--第五页-->
+<div class="page page-5 pageDown">
+    <p style="FILTER: shadow(color=#ffffff, strength=100);">
+        <font face=华文彩云 color=#ffffff>中秋美食</font>
+
+    </p>
+    <p>
+        月饼、菱角、柚子、葡萄、栗
+        <br>子、糍粑、螃蟹田螺、石榴等
+    </p>
+    <img src="images/5_pic1.png" alt="">
+    <img src="images/5_pic2.png" alt="">
+    <img src="images/5_pic3.png" alt="">
+    <img src="images/5_pic4.png" alt="">
+    <img src="images/5_pic5.png" alt="">
+    <img src="images/5_pic6.png" alt="">
+    <img src="images/5_pic7.png" alt="">
+</div>
+<!--第六页-->
+<div class="page page-6 pageDown">
+    <p style="FILTER: shadow(color=#ffffff, strength=60);">
+        <font face=华文彩云 color=#ffffff>中秋诗歌</font>
+
+    </p>
+    <p>
+        望月怀远
+        <br>&nbsp;&nbsp;唐&nbsp;张九龄
+        <br>海上生明月&nbsp;天涯共此时
+        <br>情人怨遥夜&nbsp;竟夕起相思
+        <br>灭烛怜光满&nbsp;披衣觉露滋
+        <br>不堪盈手赠&nbsp;还寝梦佳期&nbsp;
+    </p>
+    <p>
+        月夜
+        <br>&nbsp;&nbsp;唐&nbsp;杜甫
+        <br>今夜鄜州月&nbsp;闺中只独看
+        <br>遥怜小儿女&nbsp;未解忆长安
+        <br>香雾云鬟湿&nbsp;清辉玉臂寒
+        <br>何时倚虚幌&nbsp;双照泪痕干
+    </p>
+    <p>
+        水调歌头
+        <br>&nbsp;&nbsp;宋&nbsp;苏轼
+        <br>明月几时有？
+        <br>把酒问青天。
+        <br>不知天上宫阙，
+        <br>今夕是何年
+        <br>我欲乘风归去，
+        <br>又恐琼楼玉宇
+        <br>高处不胜寒。
+        <br>起舞弄清影，
+        <br>何似在人间？
+        <br>转朱阁 低绮户
+        <br>照无眠 不应有恨
+        <br>何事长向别时圆？
+        <br>人有悲欢离合
+        <br>月有阴晴圆缺
+        <br>此事古难全。
+        <br>但愿人长久，
+        <br>千里共婵娟。
+        <audio id="music" src="images/王菲%20-%20但愿人长久.mp3" ></audio>
+    </p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+<script src="js/touch.js"></script>
+<script>
+    var i=0;    //当前页码
+    //获取总页数
+    var pageCount=$(".page").length-1;
+    $("body").swipeUp(function () {
+
+        if(i<pageCount){
+            $(".page").eq(i).addClass("pageUp");
+            $(".page").eq(i).children().addClass("hide");
+            i++;
+            $(".page").eq(i).removeClass("pageDown");
+            $(".page").eq(i).children().removeClass("hide");
+        };
+        if(i==5){
+            $("#music").get(0).play();
+        }
+        else{
+            $("#music").get(0).pause();
+        }
+
+
+
+    });
+
+
+    $("body").swipeDown(function () {
+        if(i>0){
+            $(".page").eq(i).addClass("pageDown");
+            $(".page").eq(i).children().addClass("hide");
+            i--;
+            $(".page").eq(i).removeClass("pageUp");
+            $(".page").eq(i).children().removeClass("hide");
+
+            if(i==5){
+                $("#music").get(0).play();
+            }
+            else{
+                $("#music").get(0).pause();
+            }
+
+
+
+
+
+
+        }
+    });
+//
+//    $(".page").tap(function () {
+////停止声音
+//        //声音是否暂停
+//        if( $("#music").get(0).paused ){
+//            $("#music").get(0).play();
+//        }
+//        else{
+//            $("#music").get(0).pause();
+//        }
+//
+//
+//
+//
+//    });
+</script>

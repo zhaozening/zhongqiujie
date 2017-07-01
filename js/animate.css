@@ -1,0 +1,61 @@
+.pageUp{transform: translateY(-100%)}
+.pageDown{transform: translateY(100%)}
+.hide{display: none;opacity: 0}
+
+
+/*透明度opacity*/
+.opacity{
+    animation: opacity 5s ease 1;
+    animation-fill-mode: forwards;
+}
+@keyframes opacity {
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+/*向右移动*/
+.moveRight{
+    animation: moveRight 15s linear infinite 5s;
+    animation-fill-mode: forwards;
+}
+.moveRight_2{
+    animation: moveRight2 10s linear infinite;
+    animation-fill-mode: forwards;
+}
+@keyframes moveRight2 {
+    0%{transform: translateX(0)}
+    100%{transform: translateX(8rem)}
+}
+@keyframes moveRight {
+    0%{transform: translateX(0)}
+    100%{transform: translateX(8.5rem)}
+}
+/*显示*/
+@keyframes page-2 {
+    0%{height:0;opacity: 0}
+    100%{height:1.59rem;opacity: 1}
+}
+@keyframes page-2-p {
+    0%{opacity: 0;height: 0;}
+    100%{opacity: 1;height: 6rem;}
+}
+/*p*/
+@keyframes p1 {
+    0%{width: 0;height: 0;}
+    100%{width: 0.5rem;height: 2.5rem;}
+}
+@keyframes p2 {
+    0%{width: 0;}
+    100%{width: 2.5rem;}
+}
+@keyframes p3 {
+    0%{width: 0;}
+    100%{width: 100%;}
+}
+@keyframes t1 {
+    0%{width: 0;}
+    100%{width: 0.5rem;}
+}
+@keyframes t2 {
+    0%{width: 0;}
+    100%{width: 4.1rem;}
+}
